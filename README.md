@@ -173,3 +173,127 @@ With neon glow effects for immediate, non-verbal feedback.
 This project is built for educational and demonstration purposes. Detection accuracy may vary and should not replace professional cybersecurity systems.
 
 ---
+
+## 🧩 Convert This Project into a Chrome Extension
+
+Follow these steps to run this project as a Chrome Extension locally:
+
+---
+
+### 🚀 1. Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+### ⚙️ 2. Add Your Gemini API Key
+
+Create a `.env` file in the root directory:
+
+```env
+GEMINI_API_KEY=your_api_key_here
+```
+
+> ⚠️ Note: For extension usage, API key will be exposed. Use carefully.
+
+---
+
+### 🏗️ 3. Build the Project
+
+```bash
+npm run build
+```
+
+This will generate a `dist/` folder.
+
+---
+
+### 📁 4. Create Extension Folder
+
+Create a new folder named:
+
+```
+extension/
+```
+
+Copy all files from:
+
+```
+dist/
+```
+
+into:
+
+```
+extension/
+```
+
+---
+
+### 🛠️ 5. Fix File Paths
+
+Open `extension/index.html` and replace:
+
+```html
+/assets/...
+```
+
+with:
+
+```html
+./assets/...
+```
+
+---
+
+### 📄 6. Add Manifest File
+
+Create `extension/manifest.json` and add:
+
+```json
+{
+  "manifest_version": 3,
+  "name": "AI Phishing Detector",
+  "version": "1.0",
+  "description": "Detect phishing emails using AI",
+  "action": {
+    "default_popup": "index.html"
+  }
+}
+```
+
+---
+
+### 🌐 7. Load Extension in Chrome
+
+1. Open Chrome and go to:
+
+   ```
+   chrome://extensions/
+   ```
+2. Enable **Developer Mode**
+3. Click **Load unpacked**
+4. Select the `extension/` folder
+
+---
+
+### ✅ 8. Done!
+
+Click the extension icon to start analyzing emails 🎯
+
+---
+
+## ⚠️ Security Note
+
+This version runs entirely on the frontend.
+Your API key is exposed in the extension.
+
+👉 For production use:
+
+* Move API calls to a backend server
+* Do not expose your API key publicly
+
+---
+
