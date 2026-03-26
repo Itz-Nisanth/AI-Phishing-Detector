@@ -168,8 +168,3 @@ With neon glow effects for immediate, non-verbal feedback.
 
 ---
 
-## ⚠️ Disclaimer
-
-This project is built for educational and demonstration purposes. Detection accuracy may vary and should not replace professional cybersecurity systems.
-
----
