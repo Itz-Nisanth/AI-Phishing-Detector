@@ -1,0 +1,5 @@
+{
+  "name": "AI Phishing Email Detector Extension",
+  "description": "A modern Chrome Extension that detects phishing emails using AI analysis.",
+  "requestFramePermissions": []
+}
