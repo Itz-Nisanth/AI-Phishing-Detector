@@ -47,7 +47,14 @@ export async function analyzeEmail(text: string): Promise<AnalysisResult> {
     const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
-      contents: `Analyze the following email content for phishing indicators. 
+      contents: `
+       You are an expert cybersecurity system.
+       Analyze the following email content for phishing indicators. 
+      Rules:
+      - Do NOT mark emails as suspicious unless there is clear phishing intent.
+      - Normal transactional emails (orders, confirmations, shipping updates) are SAFE.
+      - Only mark Suspicious/Phishing if there is urgency, threats, fake links, or credential requests.
+       
       Return a JSON object with the following fields:
       - status: "Safe", "Suspicious", or "Phishing"
       - confidence: a number between 0 and 100
